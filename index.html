@@ -64,27 +64,27 @@
     .hero {
       position: relative;
       width: 100%;
-      height: 60vh; /* Reduced height */
+      height: 60vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 1rem; /* Reduced padding */
-      padding-top: 80px; /* Reduced space for fixed nav */
+      padding: 1rem;
+      padding-top: 80px;
     }
 
     .intro-label {
       font-family: "SourceSerifPro-It", serif;
       font-size: 1.1rem;
       color: #2b2b2b;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.2rem; /* Reduced space between "Introducing" and "The Align Journal" */
     }
 
     .intro-title {
       font-family: "atlantis-regular", serif;
       font-size: 2.2rem;
-      margin-bottom: 1.2rem;
+      margin-bottom: 0.5rem; /* Reduced space between title and paragraph */
       letter-spacing: 1px;
       color: #2b2b2b;
     }
@@ -95,12 +95,12 @@
       color: #3f3f3f;
       max-width: 640px;
       margin: 0 auto;
-      line-height: 1.6;
+      line-height: 1.3; /* Reduced line-height (leading) to tighten paragraph spacing */
     }
 
     /* === JOURNAL SECTION === */
     .journal {
-      padding: 2rem 1rem; /* Reduced padding */
+      padding: 2rem 1rem;
       text-align: center;
     }
 
@@ -145,13 +145,13 @@
       background: #fdfcf9;
       outline: none;
       font-family: "SourceSerifPro-Regular", serif;
-      text-align: center; /* Center-align the text inside the input */
+      text-align: center;
     }
 
     .signup input[type="email"]::placeholder {
       font-family: "SourceSerifPro-Regular", serif;
       color: #4e4e4e;
-      text-align: center; /* Center-align the placeholder text */
+      text-align: center;
     }
 
     .signup button {
@@ -185,8 +185,8 @@
     /* === RESPONSIVE === */
     @media (max-width: 768px) {
       .hero {
-        height: 50vh; /* Further reduced height */
-        padding-top: 100px; /* Increased space to accommodate the fixed nav bar */
+        height: 50vh;
+        padding-top: 100px;
       }
       .intro-title {
         font-size: 1.8rem;
@@ -200,7 +200,7 @@
       .hero {
         height: auto;
         padding: 2rem 1rem;
-        padding-top: 110px; /* Increased space to accommodate the fixed nav bar */
+        padding-top: 110px;
       }
       .intro-label {
         font-size: 0.95rem;
@@ -227,16 +227,17 @@
   <!-- Hero Section (Image Removed) -->
   <section class="hero">
     <p class="intro-label">Introducing</p>
-    <h1 class="intro-title">The Align Journal</h1>
+    <h1 class="intro-title">THE ALIGN PLANNER</h1>
     <p class="intro-text">
-      Bring structure to your day, your week, and your month. With dedicated layouts, the Align Journal helps you stay organized, focused, and aligned with your goals.
+      This planner is dedicated to you.
+      The dreamer, the doer, and the one brave enough to chase growth, build habits, and shape your life with purpose, one day, one week, and one month at a time.
     </p>
   </section>
 
   <!-- Journal Section -->
   <section class="journal">
     <img src="Align product.png" alt="The Align Journal">
-    <h2>Align Your Days</h2>
+    <h2>RESET YOUR DAY EVERYDAY</h2>
     <p>
       Pages designed to bring clarity and balance, so you can focus on what truly matters.
     </p>
