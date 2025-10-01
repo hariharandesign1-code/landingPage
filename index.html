@@ -44,14 +44,14 @@ img { max-width: 100%; height: auto; display: block; }
 .intro-label {
   font-family: "source-serif-pro", serif;
   font-style: italic;
-  font-size: 2.25rem;
+  font-size: 2rem;
   margin-bottom: 0.2rem;
   color: #5a4432;
   line-height: 1.1;
 }
 .intro-title {
   font-family: "garamond-premier-pro-light-display", serif;
-  font-size: 3rem;
+  font-size: 2.8rem;
   margin-bottom: 1rem;
   line-height: 1.1;
 }
@@ -59,14 +59,14 @@ img { max-width: 100%; height: auto; display: block; }
   font-family: "source-serif-pro", serif;
   font-style: italic;
   color: #5a4432;
-  font-size: 2.25rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
   line-height: 1.1;
 }
 .signup-note {
   font-family: "source-serif-pro", serif;
   color: #5a4432;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   margin-bottom: 2rem;
   line-height: 1.2;
 }
@@ -74,7 +74,7 @@ img { max-width: 100%; height: auto; display: block; }
 /* === PRODUCT CAROUSEL === */
 .carousel-container {
   max-width: 700px; 
-  margin: 0 auto 3rem;
+  margin: 0 auto 2rem;
   overflow: hidden;
   position: relative;
 }
@@ -88,8 +88,8 @@ img { max-width: 100%; height: auto; display: block; }
 .dots {
   display: flex;
   justify-content: center;
-  margin-top: 0.5rem;
-  margin-bottom: 2rem; /* gap between dots and "Be the First to Know" */
+  margin-top: 1rem; 
+  margin-bottom: 2rem; 
 }
 .dot {
   width: 12px;
@@ -105,7 +105,7 @@ img { max-width: 100%; height: auto; display: block; }
 /* === SIGNUP (Hero Section) === */
 .signup {
   max-width: 420px;
-  margin: 2rem auto 6rem auto;
+  margin: 2rem auto 4rem auto;
   text-align: center;
 }
 .signup input[type="email"] {
@@ -138,18 +138,18 @@ img { max-width: 100%; height: auto; display: block; }
 /* === WHY ALIGN === */
 .why-align {
   text-align: center;
-  padding: 4rem 1rem 1rem 1rem;
+  padding: 3rem 1rem 2rem 1rem;
 }
 .why-align h2 {
   font-family: "garamond-premier-pro-light-display", serif;
-  font-size: 3rem;
+  font-size: 2.8rem;
   margin-bottom: 1rem;
   line-height: 1.1;
 }
 .why-align p {
   font-family: "source-serif-pro", serif;
-  font-size: 1.25rem;
-  margin-bottom: 4rem;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
   color: #4a4a4a;
   max-width: 640px;
   margin-left: auto;
@@ -159,9 +159,9 @@ img { max-width: 100%; height: auto; display: block; }
 .features {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 3rem;
+  gap: 2rem;
   max-width: 1000px;
-  margin: 0 auto 4rem;
+  margin: 0 auto 3rem;
 }
 .feature {
   text-align: center;
@@ -171,8 +171,8 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .feature img {
   width: 100%;
-  max-width: 120px;
-  margin-bottom: 1rem;
+  max-width: 100px;
+  margin-bottom: 0.8rem;
 }
 .feature h3 {
   font-family: "garamond-premier-pro-light-display", serif;
@@ -182,7 +182,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .feature p {
   font-family: "source-serif-pro", serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   max-width: 220px;
   color: #6a6a6a;
   line-height: 1.2;
@@ -193,11 +193,11 @@ img { max-width: 100%; height: auto; display: block; }
   max-width: 420px;
   margin: 2rem auto 6rem auto;
   text-align: center;
-  padding-top: 2rem;
+  padding-top: 1.5rem;
 }
 .footer-signup .footer-text {
   font-family: "garamond-premier-pro-light-display", serif;
-  font-size: 3rem;
+  font-size: 2.8rem;
   line-height: 1.1;
   margin-bottom: 2rem;
 }
@@ -240,30 +240,23 @@ footer {
 /* === RESPONSIVE MOBILE === */
 @media (max-width: 768px) {
   .intro-title {
-    font-family: "garamond-premier-pro-light-display", serif;
-    font-size: 3rem;
-    margin-bottom: 2rem; /* increase gap with product images */
+    font-size: 2rem;
+    margin-bottom: 2rem;
   }
-  .carousel img { width: 110%; } /* 10% bigger */
+  .intro-label, .intro-text {
+    font-size: 1.5rem;
+  }
+  .carousel img { width: 110%; } /* slightly bigger */
   .features {
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 2rem;
   }
-  .feature img { max-width: 140px; } /* 50% bigger icons */
-  .feature h3 {
-    font-family: "garamond-premier-pro-light-display", serif;
-    font-size: 1.8rem;
-  }
-  .feature p { font-size: 1.62rem; }
-  .why-align h2 {
-    font-family: "garamond-premier-pro-light-display", serif;
-    font-size: 4.5rem;
-  }
-  .why-align p { font-size: 1.875rem; }
-  .footer-signup .footer-text {
-    font-size: 3rem;
-    line-height: 1.2;
-  }
+  .feature img { max-width: 80px; }
+  .feature h3 { font-size: 1.3rem; }
+  .feature p { font-size: 1rem; }
+  .why-align h2 { font-size: 2rem; }
+  .why-align p { font-size: 1rem; }
+  .footer-signup .footer-text { font-size: 2rem; }
   .signup input[type="email"], .signup button,
   .footer-signup input[type="email"], .footer-signup button {
     font-family: "garamond-premier-pro-display", serif;
