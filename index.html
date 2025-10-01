@@ -52,13 +52,13 @@ img { max-width: 100%; height: auto; display: block; }
   line-height: 1.1;
 }
 .intro-title {
-  font-family: "garamond-premier-pro-light-display", serif; /* Correct font */
+  font-family: "garamond-premier-pro-light-display", serif;
   font-size: 2.8rem;
   line-height: 1.1;
-  font-weight: 300; /* Explicitly set to light weight */
+  font-weight: 300;
   margin-bottom: 1rem;
   -webkit-font-smoothing: antialiased;
-  text-transform: uppercase; /* Uppercase for consistency */
+  text-transform: uppercase;
 }
 .intro-text {
   font-family: "source-serif-pro", serif;
@@ -74,6 +74,61 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: 1.2rem;
   margin-bottom: 2rem;
   line-height: 1.2;
+}
+
+/* === CUSTOM EMAIL FORM DESIGN === */
+.email-form {
+  max-width: 420px;
+  margin: 2rem auto;
+  text-align: center;
+  background-color: transparent; /* No background */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: none; /* Remove shadow */
+}
+
+.email-form h3 {
+  font-family: "garamond-premier-pro-light-display", serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #5a4432;
+  text-transform: uppercase;
+}
+
+.email-form input[type="email"] {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid #c4c0b8;
+  border-radius: 30px;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  background: transparent; /* Transparent background */
+  outline: none;
+  font-family: "garamond-premier-pro-display", serif; /* Ensure the same font family */
+  text-align: center;
+  color: #5a4432; /* Text color */
+}
+
+.email-form input::placeholder { 
+  color: #8a7d70; /* Placeholder color */
+}
+
+.email-form button {
+  width: 100%;
+  padding: 0.95rem;
+  background: #5a4432;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-family: "garamond-premier-pro-display", serif; /* Ensure the same font family */
+  transition: all 0.3s ease;
+}
+
+.email-form button:active {
+  background: #e8e3db;
+  color: #5a4432;
 }
 
 /* === PRODUCT CAROUSEL === */
@@ -107,58 +162,23 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .dot.active { background: #5a4432; }
 
-/* === SIGNUP (Hero Section) === */
-.signup {
-  max-width: 420px;
-  margin: 2rem auto 6rem auto; /* Increased bottom margin to add more space */
-  text-align: center;
-}
-.signup input[type="email"] {
-  width: 100%;
-  padding: 0.85rem 1rem;
-  border: 1px solid #c4c0b8;
-  border-radius: 30px;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-  background: #fff;
-  outline: none;
-  font-family: "garamond-premier-pro-display", serif;
-  text-align: center;
-}
-.signup input::placeholder { color: #8a7d70; }
-.signup button {
-  width: 100%;
-  padding: 0.95rem;
-  background: #5a4432;
-  color: #fff;
-  border: none;
-  border-radius: 30px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  font-family: "garamond-premier-pro-display", serif;
-  transition: all 0.3s ease;
-}
-.signup button:active { background: #e8e3db; color: #5a4432; }
-
 /* === WHY ALIGN === */
 .why-align {
   text-align: center;
   padding: 3rem 1rem 2rem 1rem;
-  margin-top: 6rem; /* Increased top margin to push it further down */
+  margin-top: 6rem;
 }
 .why-align h2 {
-  font-family: "garamond-premier-pro-light-display", serif; /* Correct font here too */
+  font-family: "garamond-premier-pro-light-display", serif;
   font-size: 2.8rem;
   line-height: 1.1;
-  font-weight: 300; /* Light font weight for consistency */
+  font-weight: 300;
   margin-bottom: 1rem;
-  -webkit-font-smoothing: antialiased;
-  text-transform: uppercase; /* Uppercase for consistency */
 }
 .why-align p {
-  font-family: "source-serif-pro", serif; /* Same font family as signup note */
-  font-size: 1.2rem; /* Adjusted size for readability */
-  color: #5a4432; /* Same color */
+  font-family: "source-serif-pro", serif;
+  font-size: 1.2rem;
+  color: #5a4432;
   line-height: 1.2;
   max-width: 640px;
   margin-left: auto;
@@ -184,7 +204,7 @@ img { max-width: 100%; height: auto; display: block; }
   margin-bottom: 0.8rem;
 }
 .feature h3 {
-  font-family: "garamond-premier-pro-light-display", serif; /* Font here too */
+  font-family: "garamond-premier-pro-light-display", serif;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   line-height: 1.1;
@@ -205,13 +225,13 @@ img { max-width: 100%; height: auto; display: block; }
   padding-top: 1.5rem;
 }
 .footer-signup .footer-text {
-  font-family: "garamond-premier-pro-light-display", serif; /* Correct font here too */
+  font-family: "garamond-premier-pro-light-display", serif;
   font-size: 2.8rem;
   line-height: 1.1;
   margin-bottom: 2rem;
-  font-weight: 300; /* Light weight */
+  font-weight: 300;
   -webkit-font-smoothing: antialiased;
-  text-transform: uppercase; /* Keep uppercase */
+  text-transform: uppercase;
 }
 .footer-signup input[type="email"] {
   width: 100%;
@@ -220,9 +240,9 @@ img { max-width: 100%; height: auto; display: block; }
   border-radius: 30px;
   margin-bottom: 1rem;
   font-size: 1.2rem;
-  background: #fff;
+  background: transparent;
   outline: none;
-  font-family: "garamond-premier-pro-display", serif;
+  font-family: "garamond-premier-pro-display", serif; /* Ensure the same font family */
   text-align: center;
 }
 .footer-signup button {
@@ -234,7 +254,7 @@ img { max-width: 100%; height: auto; display: block; }
   border-radius: 30px;
   font-size: 1.2rem;
   cursor: pointer;
-  font-family: "garamond-premier-pro-display", serif;
+  font-family: "garamond-premier-pro-display", serif; /* Ensure the same font family */
   transition: all 0.3s ease;
 }
 .footer-signup button:active { background: #e8e3db; color: #5a4432; }
@@ -249,29 +269,6 @@ footer {
   margin-top: 3rem;
 }
 
-/* === RESPONSIVE MOBILE === */
-@media (max-width: 768px) {
-  .intro-title, .why-align h2, .footer-signup .footer-text {
-    font-size: 3rem;  /* Slightly larger for mobile */
-  }
-  .intro-label, .intro-text {
-    font-size: 1.8rem;  /* Adjust label font size */
-  }
-  .carousel img { width: 110%; } /* slightly bigger */
-  .features {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-  }
-  .feature img { max-width: 80px; }
-  .feature h3 { font-size: 1.3rem; }
-  .feature p { font-size: 1rem; }
-  .why-align p { font-size: 1rem; }
-  .footer-signup { max-width: 90%; margin: 2rem auto 6rem auto; }
-  .signup input[type="email"], .signup button,
-  .footer-signup input[type="email"], .footer-signup button {
-    font-family: "garamond-premier-pro-display", serif;
-  }
-}
 </style>
 </head>
 <body>
@@ -309,10 +306,10 @@ footer {
     Sign up below to join our community and be the first to get notified when preorders open.
   </p>
 
-  <!-- Hero Signup -->
-  <div class="signup">
-    <form action="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/formResponse" method="POST" target="_blank">
-      <input type="email" name="entry.YOUR_FIELD_ID" placeholder="EMAIL ID" required>
+  <!-- Custom Signup Form -->
+  <div class="email-form">
+    <form action="https://mynextverse.us5.list-manage.com/subscribe/post?u=199ddc4283a70c38f9fa26b1b&id=4037d9bc2b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+       <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="EMAIL ID" required>
       <button type="submit">JOIN THE WAITLIST</button>
     </form>
   </div>
@@ -321,7 +318,7 @@ footer {
 <!-- Why Align -->
 <section class="why-align">
   <h2>WHY ALIGN?</h2>
-  <p>This planner is dedicated to you. The dreamer, the doer, and the one brave enough to chase growth, build habits, and shape your life with purpose, one day, one week, and one month at a time.</p>
+  <p>The dreamer, the doer, and the one brave enough to chase growth, build habits, and shape your life with purpose, one day, one week, and one month at a time.</p>
   <div class="features">
     <div class="feature">
       <img src="Align_Daily Reset Icon.png" alt="Daily Reset">
@@ -349,8 +346,8 @@ footer {
 <!-- Footer Signup -->
 <section class="footer-signup">
   <p class="footer-text">DON’T JUST PLAN YOUR LIFE.<br>ALIGN IT.</p>
-  <form action="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/formResponse" method="POST" target="_blank">
-    <input type="email" name="entry.YOUR_FIELD_ID" placeholder="EMAIL ID" required>
+  <form action="https://mynextverse.us5.list-manage.com/subscribe/post?u=199ddc4283a70c38f9fa26b1b&id=4037d9bc2b" method="post" target="_blank">
+    <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="EMAIL ID" required>
     <button type="submit">JOIN THE WAITLIST</button>
   </form>
 </section>
@@ -359,7 +356,7 @@ footer {
 <footer>© 2025 My Store, Powered by mynextverse.com | Privacy Policy</footer>
 
 <script>
-/* Carousel Script */
+// Carousel Script
 const track = document.getElementById('carousel-track');
 const slides = Array.from(track.children);
 const dots = document.querySelectorAll('.dot');
