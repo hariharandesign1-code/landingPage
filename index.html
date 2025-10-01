@@ -16,6 +16,8 @@ body {
   color: #5a4432;
   line-height: 1.2;
   font-family: "source-serif-pro", serif;
+  -webkit-font-smoothing: antialiased; /* Smooth font rendering */
+  -moz-osx-font-smoothing: grayscale; /* For better font rendering on Mac */
 }
 img { max-width: 100%; height: auto; display: block; }
 
@@ -50,11 +52,13 @@ img { max-width: 100%; height: auto; display: block; }
   line-height: 1.1;
 }
 .intro-title {
-  font-family: "garamond-premier-pro-light-display", serif;
+  font-family: "garamond-premier-pro-light-display", serif; /* Correct font */
   font-size: 2.8rem;
   line-height: 1.1;
-  font-style: normal;
+  font-weight: 300; /* Explicitly set to light weight */
   margin-bottom: 1rem;
+  -webkit-font-smoothing: antialiased;
+  text-transform: uppercase; /* Uppercase for consistency */
 }
 .intro-text {
   font-family: "source-serif-pro", serif;
@@ -142,11 +146,13 @@ img { max-width: 100%; height: auto; display: block; }
   padding: 3rem 1rem 2rem 1rem;
 }
 .why-align h2 {
-  font-family: "garamond-premier-pro-light-display", serif;
+  font-family: "garamond-premier-pro-light-display", serif; /* Correct font here too */
   font-size: 2.8rem;
   line-height: 1.1;
-  font-style: normal;
+  font-weight: 300; /* Light font weight for consistency */
   margin-bottom: 1rem;
+  -webkit-font-smoothing: antialiased;
+  text-transform: uppercase; /* Uppercase for consistency */
 }
 .why-align p {
   font-family: "source-serif-pro", serif;
@@ -177,7 +183,7 @@ img { max-width: 100%; height: auto; display: block; }
   margin-bottom: 0.8rem;
 }
 .feature h3 {
-  font-family: "garamond-premier-pro-light-display", serif;
+  font-family: "garamond-premier-pro-light-display", serif; /* Font here too */
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   line-height: 1.1;
@@ -198,10 +204,13 @@ img { max-width: 100%; height: auto; display: block; }
   padding-top: 1.5rem;
 }
 .footer-signup .footer-text {
-  font-family: "garamond-premier-pro-light-display", serif;
+  font-family: "garamond-premier-pro-light-display", serif; /* Correct font here too */
   font-size: 2.8rem;
   line-height: 1.1;
   margin-bottom: 2rem;
+  font-weight: 300; /* Light weight */
+  -webkit-font-smoothing: antialiased;
+  text-transform: uppercase; /* Keep uppercase */
 }
 .footer-signup input[type="email"] {
   width: 100%;
@@ -242,10 +251,10 @@ footer {
 /* === RESPONSIVE MOBILE === */
 @media (max-width: 768px) {
   .intro-title, .why-align h2, .footer-signup .footer-text {
-    font-size: 2rem;
+    font-size: 3rem;  /* Slightly larger for mobile */
   }
   .intro-label, .intro-text {
-    font-size: 1.5rem;
+    font-size: 1.8rem;  /* Adjust label font size */
   }
   .carousel img { width: 110%; } /* slightly bigger */
   .features {
@@ -296,7 +305,7 @@ footer {
 
   <p class="intro-text">Be the First to Know</p>
   <p class="signup-note">
-    Sign up below to join our community and be the first to get notified when preorders open.
+    Sign up below to join our community <br> and be the first to get notified when preorders open.
   </p>
 
   <!-- Hero Signup -->
