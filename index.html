@@ -104,7 +104,7 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: 1.2rem;
   background: transparent; /* Transparent background */
   outline: none;
-  font-family: "garamond-premier-pro-display", serif; /* Ensure the same font family */
+  font-family: "garamond-premier-pro-display", serif;
   text-align: center;
   color: #5a4432; /* Text color */
 }
@@ -122,7 +122,7 @@ img { max-width: 100%; height: auto; display: block; }
   border-radius: 30px;
   font-size: 1.2rem;
   cursor: pointer;
-  font-family: "garamond-premier-pro-display", serif; /* Ensure the same font family */
+  font-family: "garamond-premier-pro-display", serif;
   transition: all 0.3s ease;
 }
 
@@ -185,6 +185,8 @@ img { max-width: 100%; height: auto; display: block; }
   margin-right: auto;
   margin-bottom: 3rem;
 }
+
+/* === FEATURE ICONS === */
 .features {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -217,6 +219,26 @@ img { max-width: 100%; height: auto; display: block; }
   line-height: 1.2;
 }
 
+/* === Responsive for Mobile === */
+@media (max-width: 768px) {
+  /* Adjust grid for smaller screens */
+  .features {
+    grid-template-columns: repeat(2, 1fr); /* Change to 2 columns on mobile */
+  }
+
+  .feature img {
+    max-width: 80px; /* Smaller icon size on mobile */
+  }
+
+  .feature h3 {
+    font-size: 1.2rem; /* Adjust heading size */
+  }
+
+  .feature p {
+    font-size: 1rem; /* Adjust text size */
+  }
+}
+
 /* === Footer Signup Section === */
 .footer-signup {
   max-width: 420px;
@@ -242,7 +264,7 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: 1.2rem;
   background: transparent;
   outline: none;
-  font-family: "garamond-premier-pro-display", serif; /* Ensure the same font family */
+  font-family: "garamond-premier-pro-display", serif;
   text-align: center;
 }
 .footer-signup button {
@@ -254,7 +276,7 @@ img { max-width: 100%; height: auto; display: block; }
   border-radius: 30px;
   font-size: 1.2rem;
   cursor: pointer;
-  font-family: "garamond-premier-pro-display", serif; /* Ensure the same font family */
+  font-family: "garamond-premier-pro-display", serif;
   transition: all 0.3s ease;
 }
 .footer-signup button:active { background: #e8e3db; color: #5a4432; }
@@ -309,7 +331,7 @@ footer {
   <!-- Custom Signup Form -->
   <div class="email-form">
     <form action="https://mynextverse.us5.list-manage.com/subscribe/post?u=199ddc4283a70c38f9fa26b1b&id=4037d9bc2b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-       <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="EMAIL ID" required>
+      <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="YOUR EMAIL ID" required>
       <button type="submit">JOIN THE WAITLIST</button>
     </form>
   </div>
@@ -318,7 +340,7 @@ footer {
 <!-- Why Align -->
 <section class="why-align">
   <h2>WHY ALIGN?</h2>
-  <p>The dreamer, the doer, and the one brave enough to chase growth, build habits, and shape your life with purpose, one day, one week, and one month at a time.</p>
+  <p>This planner is dedicated to you. The dreamer, the doer, and the one brave enough to chase growth, build habits, and shape your life with purpose, one day, one week, and one month at a time.</p>
   <div class="features">
     <div class="feature">
       <img src="Align_Daily Reset Icon.png" alt="Daily Reset">
@@ -347,7 +369,7 @@ footer {
 <section class="footer-signup">
   <p class="footer-text">DON’T JUST PLAN YOUR LIFE.<br>ALIGN IT.</p>
   <form action="https://mynextverse.us5.list-manage.com/subscribe/post?u=199ddc4283a70c38f9fa26b1b&id=4037d9bc2b" method="post" target="_blank">
-    <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="EMAIL ID" required>
+    <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="YOUR EMAIL ID" required>
     <button type="submit">JOIN THE WAITLIST</button>
   </form>
 </section>
