@@ -1,262 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Align Journal</title>
-  <style>
-    /* === FONT FACE DECLARATIONS === */
-    @font-face {
-      font-family: "SourceSerifPro-Regular";
-      src: url("SourceSerifPro-Regular.ttf") format("truetype");
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Align Planner</title>
+<style>
+/* === FONT FACE === */
+@font-face { font-family: "SourceSerifPro-Regular"; src: url("SourceSerifPro-Regular.ttf") format("truetype"); }
+@font-face { font-family: "SourceSerifPro-It"; src: url("SourceSerifPro-It.ttf") format("truetype"); }
+@font-face { font-family: "atlantis-regular"; src: url("atlantis-regular.ttf") format("truetype"); }
 
-    @font-face {
-      font-family: "SourceSerifPro-It";
-      src: url("SourceSerifPro-It.ttf") format("truetype");
-    }
+/* === RESET === */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background-color: #f6f4ef;
+  color: #5a4432;
+  line-height: 1.2;
+  font-family: "SourceSerifPro-Regular", serif;
+}
+img { max-width: 100%; height: auto; display: block; }
 
-    @font-face {
-      font-family: "atlantis-regular";
-      src: url("atlantis-regular.ttf") format("truetype");
-    }
+/* === TOP NAV === */
+.top-nav {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f6f4ef;
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #e8e3db;
+}
+.nav-logo { max-height: 45px; }
 
-    /* === RESET === */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+/* === HERO === */
+.hero {
+  padding-top: 120px;
+  text-align: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.intro-label {
+  font-family: "SourceSerifPro-It", serif;
+  font-size: 1.8rem;
+  margin-bottom: 0.2rem;
+  color: #5a4432;
+  line-height: 1.1;
+}
+.intro-title {
+  font-family: "atlantis-regular", serif;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+}
+@media (max-width: 480px) {
+  .intro-title { font-size: 2.2rem; line-height: 1.1; }
+}
+.intro-text {
+  font-family: "SourceSerifPro-It", serif;
+  color: #5a4432;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+.signup-note {
+  font-family: "SourceSerifPro-It", serif;
+  color: #5a4432;
+  font-size: 1.18rem;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
 
-    body {
-      background-color: #f6f4ef;
-      color: #2b2b2b;
-      line-height: 1.6;
-      font-family: "SourceSerifPro-Regular", serif;
-    }
+/* === PRODUCT CAROUSEL === */
+.carousel {
+  position: relative;
+  max-width: 700px; 
+  margin: 0 auto 3rem;
+}
+.carousel img { width: 100%; border-radius: 6px; }
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+.dot {
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  background: #c4c0b8;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.dot.active { background: #5a4432; }
 
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
+/* === SIGNUP (Hero Section) === */
+.hero .signup {
+  max-width: 420px;
+  margin: 2rem auto 6rem auto; /* bottom margin increased for gap before WHY ALIGN */
+  text-align: center;
+}
+.signup input[type="email"] {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid #c4c0b8;
+  border-radius: 30px;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  background: #fff;
+  outline: none;
+  font-family: "SourceSerifPro-It", serif;
+  text-align: center;
+}
+.signup input::placeholder { color: #8a7d70; }
+.signup button {
+  width: 100%;
+  padding: 0.95rem;
+  background: #5a4432;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-family: "SourceSerifPro-It", serif;
+  transition: all 0.3s ease;
+}
+.signup button:active { background: #e8e3db; color: #5a4432; }
 
-    /* === TOP NAV BAR === */
-    .top-nav {
-      width: 100%;
-      height: 80px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #f6f4ef;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
+/* === WHY ALIGN === */
+.why-align {
+  text-align: center;
+  padding: 4rem 1rem 1rem 1rem;
+}
+.why-align h2 {
+  font-family: "atlantis-regular", serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+.why-align p {
+  font-family: "SourceSerifPro-It", serif;
+  font-size: 1.575rem;
+  margin-bottom: 4rem;
+  color: #4a4a4a;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.2;
+}
+.features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto 4rem;
+}
+.feature {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.feature img { width: 110px; margin-bottom: 0.8rem; }
+.feature h3 {
+  font-family: "atlantis-regular", serif;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+}
+.feature p { font-family: "SourceSerifPro-It", serif; font-size: 1.08rem; color: #6a6a6a; max-width: 200px; line-height: 1.2; }
 
-    .nav-logo {
-      max-height: 60px;
-    }
+/* === FOOTER SIGNUP SECTION (Adjusted spacing) === */
+.footer-signup {
+  max-width: 420px;
+  margin: 0 auto 4rem auto; /* remove large top margin */
+  text-align: center;
+  padding-top: 2rem; /* small padding at top for slight gap from features section */
+}
+.footer-signup .footer-text {
+  font-family: "atlantis-regular", serif;
+  font-size: 3rem;
+  line-height: 1.1;
+  margin-top: 1rem;   /* reduce top gap */
+  margin-bottom: 3rem; /* increase gap between text and email/button */
+}
+.footer-signup input[type="email"] {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid #c4c0b8;
+  border-radius: 30px;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  background: #fff;
+  outline: none;
+  font-family: "SourceSerifPro-It", serif;
+  text-align: center;
+}
+.footer-signup button {
+  width: 100%;
+  padding: 0.95rem;
+  background: #5a4432;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-family: "SourceSerifPro-It", serif;
+  transition: all 0.3s ease;
+}
+.footer-signup button:active { background: #e8e3db; color: #5a4432; }
 
-    /* === HERO SECTION (image removed) === */
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 60vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 1rem;
-      padding-top: 80px;
-    }
+/* === FOOTER === */
+footer { text-align: center; padding: 1rem; font-size: 0.96rem; color: #666; border-top: 1px solid #ddd; margin-top: 3rem; }
 
-    .intro-label {
-      font-family: "SourceSerifPro-It", serif;
-      font-size: 1.1rem;
-      color: #2b2b2b;
-      margin-bottom: 0.2rem;
-    }
-
-    .intro-title {
-      font-family: "atlantis-regular", serif;
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
-      letter-spacing: 1px;
-      color: #2b2b2b;
-    }
-
-    .intro-text {
-      font-family: "SourceSerifPro-Regular", serif;
-      font-size: 1rem;
-      color: #3f3f3f;
-      max-width: 640px;
-      margin: 0 auto;
-      line-height: 1.3;
-    }
-
-    /* === JOURNAL SECTION === */
-    .journal {
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-
-    .journal img {
-      max-width: 360px;
-      margin: 0 auto 2rem;
-      border-radius: 8px;
-      box-shadow: 0px 0px 0px rgba(0,0,0,0.08);
-    }
-
-    .journal h2 {
-      font-family: "atlantis-regular", serif;
-      font-size: 1.8rem;
-      margin-bottom: 0.8rem;
-      color: #2b2b2b;
-    }
-
-    .journal p {
-      font-family: "SourceSerifPro-Regular", serif;
-      font-size: 1rem;
-      color: #4e4e4e;
-      margin-bottom: 2rem;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* === EMAIL SIGNUP === */
-    .signup {
-      max-width: 420px;
-      margin: 0 auto;
-      align-items: center;
-    }
-
-    .signup input[type="email"] {
-      width: 100%;
-      padding: 0.85rem 1rem;
-      border: 1px solid #c4c0b8;
-      border-radius: 30px;
-      margin-bottom: 1rem;
-      font-size: 1rem;
-      background: #fdfcf9;
-      outline: none;
-      font-family: "SourceSerifPro-Regular", serif;
-      text-align: center;
-    }
-
-    .signup input[type="email"]::placeholder {
-      font-family: "SourceSerifPro-Regular", serif;
-      color: #4e4e4e;
-      text-align: center;
-    }
-
-    .signup button {
-      width: 100%;
-      padding: 0.95rem;
-      background: #111;
-      color: white;
-      border: none;
-      border-radius: 30px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      font-family: "SourceSerifPro-Regular", serif;
-    }
-
-    .signup button:hover {
-      background: #444;
-    }
-
-    /* === FOOTER === */
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.8rem;
-      color: #666;
-      border-top: 1px solid #ddd;
-      margin-top: 3rem;
-      font-family: "SourceSerifPro-Regular", serif;
-    }
-
-    /* === RESPONSIVE === */
-    @media (max-width: 768px) {
-      .hero {
-        height: 50vh;
-        padding-top: 100px;
-      }
-      .intro-title {
-        font-size: 1.8rem; /* Adjust font size for mobile */
-      }
-      .intro-text {
-        font-size: 0.95rem;
-      }
-      .journal h2 {
-        font-size: 1.6rem; /* Adjust font size for mobile */
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero {
-        height: auto;
-        padding: 2rem 1rem;
-        padding-top: 110px;
-      }
-      .intro-label {
-        font-size: 0.95rem;
-      }
-      .intro-title {
-        font-size: 1.5rem; /* Adjust font size for mobile */
-      }
-      .journal h2 {
-        font-size: 1.4rem; /* Adjust font size for mobile */
-      }
-      .journal p {
-        font-size: 0.9rem;
-      }
-    }
-  </style>
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .intro-title { font-size: 3rem; line-height: 1.1; }
+  .intro-label, .intro-text { font-size: 1.8rem; line-height: 1.1; }
+  .why-align h2 { font-size: 3rem; line-height: 1.1; }
+  .why-align p { font-size: 1.575rem; line-height: 1.2; }
+  .footer-signup .footer-text { font-size: 3rem; line-height: 1.1; }
+  .features { grid-template-columns: 2fr 2fr; }
+  .feature img { width: 90px; }
+  .feature h3 { font-size: 1.44rem; }
+  .feature p { font-size: 1.08rem; }
+}
+@media (max-width: 480px) {
+  .intro-title { font-size: 2.2rem; line-height: 1.1; }
+  .intro-label, .intro-text { font-size: 1.8rem; line-height: 1.1; }
+  .why-align h2 { font-size: 2.2rem; line-height: 1.1; }
+  .why-align p { font-size: 1.26rem; line-height: 1.2; }
+  .footer-signup .footer-text { font-size: 2.2rem; line-height: 1.1; }
+  .features { grid-template-columns: 1fr; }
+  .feature img { width: 70px; }
+  .feature h3 { font-size: 1rem; }
+  .feature p { font-size: 0.9rem; }
+}
+</style>
 </head>
 <body>
 
-  <!-- Top Navigation -->
-  <nav class="top-nav">
-    <img src="Align Wormark_B.png" alt="Align Logo" class="nav-logo">
-  </nav>
+<!-- Top Navigation -->
+<nav class="top-nav">
+  <img src="Align Wormark_B.png" alt="Align Logo" class="nav-logo">
+</nav>
 
-  <!-- Hero Section (Image Removed) -->
-  <section class="hero">
-    <p class="intro-label">Introducing</p>
-    <h1 class="intro-title">THE ALIGN PLANNER</h1>
-    <p class="intro-text">
-      This planner is dedicated to you. 
-      The dreamer, the doer, and the one brave enough to chase growth, build habits, and shape your life with purpose, one day, one week, and one month at a time.
-    </p>
-  </section>
+<!-- Hero -->
+<section class="hero">
+  <p class="intro-label">Introducing</p>
+  <h1 class="intro-title">THE ALIGN PLANNER</h1>
 
-  <!-- Journal Section -->
-  <section class="journal">
-    <img src="Align product.png" alt="The Align Journal">
-    <h2>RESET YOUR DAY EVERYDAY</h2>
-    <p>
-      Pages designed to bring clarity and balance, so you can focus on what truly matters.
-    </p>
-
-    <div class="signup">
-      <form>
-        <input type="email" placeholder="EMAIL ID" required>
-        <button type="submit">Subscribe to get notified</button>
-      </form>
+  <!-- Carousel -->
+  <div class="carousel">
+    <img id="carousel-img" src="Align product.png" alt="Planner Image">
+    <div class="dots">
+      <span class="dot active" onclick="showSlide(0)"></span>
+      <span class="dot" onclick="showSlide(1)"></span>
+      <span class="dot" onclick="showSlide(2)"></span>
+      <span class="dot" onclick="showSlide(3)"></span>
+      <span class="dot" onclick="showSlide(4)"></span>
     </div>
-  </section>
+  </div>
 
-  <!-- Footer -->
-  <footer>
-    © 2025 My Store, Powered by mynextverse.com | Privacy Policy
-  </footer>
+  <p class="intro-text">Be the First to Know</p>
+  <p class="signup-note">
+    Sign up below to join our community and be the first to get notified when preorders open.
+  </p>
 
+  <!-- Hero Signup -->
+  <div class="signup">
+    <form action="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/formResponse" method="POST" target="_blank">
+      <input type="email" name="entry.YOUR_FIELD_ID" placeholder="EMAIL ID" required>
+      <button type="submit">JOIN THE WAITLIST</button>
+    </form>
+  </div>
+</section>
+
+<!-- Why Align -->
+<section class="why-align">
+  <h2>WHY ALIGN?</h2>
+  <p>This planner is dedicated to you. <br> The dreamer, the doer, and the one brave enough to chase growth, build habits, and shape your life with purpose, one day, one week, and one month at a time.</p>
+  <div class="features">
+    <div class="feature">
+      <img src="Align_Daily Reset Icon.png" alt="Daily Reset">
+      <h3>DAILY RESET</h3>
+      <p>Priorities, self-care, gratitude, reflection</p>
+    </div>
+    <div class="feature">
+      <img src="Align_Weekly Reset Icon.png" alt="Weekly Reset">
+      <h3>WEEKLY RESET</h3>
+      <p>Habit tracking to stay consistent</p>
+    </div>
+    <div class="feature">
+      <img src="Align_Monthly Reset Icon.png" alt="Monthly Reset">
+      <h3>MONTHLY RESET</h3>
+      <p>Calendar view, planning, and reflection</p>
+    </div>
+    <div class="feature">
+      <img src="Align_Creative Reset Icon.png" alt="Creative Reset">
+      <h3>CREATIVE RESET</h3>
+      <p>Free space for ideas, creativity, and clarity</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer Signup -->
+<section class="footer-signup">
+  <p class="footer-text">
+    DON’T JUST PLAN YOUR LIFE.<br>ALIGN IT.
+  </p>
+  <form action="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/formResponse" method="POST" target="_blank">
+    <input type="email" name="entry.YOUR_FIELD_ID" placeholder="EMAIL ID" required>
+    <button type="submit">JOIN THE WAITLIST</button>
+  </form>
+</section>
+
+<!-- Footer -->
+<footer>© 2025 My Store, Powered by mynextverse.com | Privacy Policy</footer>
+
+<script>
+/* Carousel Script */
+const images = [
+  "Align product.png",
+  "Align product_1.png",
+  "Align product_2.png",
+  "Align product_3.png",
+  "Align product_4.png"
+];
+let currentSlide = 0;
+const imgElement = document.getElementById("carousel-img");
+const dots = document.querySelectorAll(".dot");
+function showSlide(index){
+  currentSlide=index;
+  imgElement.src=images[index];
+  dots.forEach((dot,i)=>dot.classList.toggle("active",i===index));
+}
+</script>
 </body>
 </html>
