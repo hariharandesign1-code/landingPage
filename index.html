@@ -42,24 +42,21 @@ img { max-width: 100%; height: auto; display: block; }
   padding-right: 1rem;
 }
 .intro-label {
-  font-family: "source-serif-pro", serif;
-  font-style: italic;
-  font-size: 2rem;
-  margin-bottom: 0.2rem;
+  font-family: "garamond-premier-pro-light-display", serif;
+  font-size: 2.8rem;
+  margin-bottom: 0.3rem;
   color: #5a4432;
   line-height: 1.1;
 }
 .intro-title {
   font-family: "garamond-premier-pro-light-display", serif;
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
+  font-size: 3rem;
+  margin-bottom: 1.2rem;
   line-height: 1.1;
 }
 .intro-text {
-  font-family: "source-serif-pro", serif;
-  font-style: italic;
-  color: #5a4432;
-  font-size: 2rem;
+  font-family: "garamond-premier-pro-light-display", serif;
+  font-size: 2.8rem;
   margin-bottom: 1rem;
   line-height: 1.1;
 }
@@ -80,9 +77,9 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .carousel-track {
   display: flex;
-  transition: transform 0.4s ease;
+  transition: transform 0.3s ease-in-out;
 }
-.carousel img { border-radius: 6px; width: 100%; }
+.carousel img { border-radius: 6px; width: 100%; object-fit: contain; }
 
 /* === CAROUSEL DOTS === */
 .dots {
@@ -142,19 +139,19 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .why-align h2 {
   font-family: "garamond-premier-pro-light-display", serif;
-  font-size: 2.8rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
   line-height: 1.1;
 }
 .why-align p {
-  font-family: "source-serif-pro", serif;
-  font-size: 1.1rem;
+  font-family: "garamond-premier-pro-light-display", serif;
+  font-size: 2.8rem;
   margin-bottom: 3rem;
   color: #4a4a4a;
   max-width: 640px;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 .features {
   display: grid;
@@ -181,7 +178,7 @@ img { max-width: 100%; height: auto; display: block; }
   line-height: 1.1;
 }
 .feature p {
-  font-family: "source-serif-pro", serif;
+  font-family: "garamond-premier-pro-light-display", serif;
   font-size: 1.1rem;
   max-width: 220px;
   color: #6a6a6a;
@@ -197,7 +194,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .footer-signup .footer-text {
   font-family: "garamond-premier-pro-light-display", serif;
-  font-size: 2.8rem;
+  font-size: 3rem;
   line-height: 1.1;
   margin-bottom: 2rem;
 }
@@ -239,24 +236,19 @@ footer {
 
 /* === RESPONSIVE MOBILE === */
 @media (max-width: 768px) {
-  .intro-title {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-  .intro-label, .intro-text {
-    font-size: 1.5rem;
-  }
-  .carousel img { width: 110%; } /* slightly bigger */
+  .intro-title { font-size: 2.4rem; margin-bottom: 2rem; }
+  .intro-label, .intro-text { font-size: 2rem; }
+  .carousel img { width: 120%; } /* slightly bigger */
   .features {
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
   }
   .feature img { max-width: 80px; }
-  .feature h3 { font-size: 1.3rem; }
-  .feature p { font-size: 1rem; }
-  .why-align h2 { font-size: 2rem; }
-  .why-align p { font-size: 1rem; }
-  .footer-signup .footer-text { font-size: 2rem; }
+  .feature h3 { font-size: 1.4rem; }
+  .feature p { font-size: 1.1rem; }
+  .why-align h2 { font-size: 2.4rem; }
+  .why-align p { font-size: 2rem; }
+  .footer-signup .footer-text { font-size: 2.4rem; }
   .signup input[type="email"], .signup button,
   .footer-signup input[type="email"], .footer-signup button {
     font-family: "garamond-premier-pro-display", serif;
@@ -363,14 +355,24 @@ function showSlide(index) {
   currentSlide=index;
 }
 
-// Swipe for mobile
+// Smooth swipe for mobile
 let startX = 0;
 track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
+track.addEventListener('touchmove', e => {
+  const moveX = e.touches[0].clientX;
+  const diff = startX - moveX;
+  track.style.transform = `translateX(${-currentSlide*slides[0].getBoundingClientRect().width - diff}px)`;
+});
 track.addEventListener('touchend', e => {
   const endX = e.changedTouches[0].clientX;
-  if(endX < startX - 50 && currentSlide < slides.length-1) showSlide(currentSlide+1);
-  if(endX > startX + 50 && currentSlide > 0) showSlide(currentSlide-1);
+  const threshold = 50;
+  if(endX < startX - threshold && currentSlide < slides.length-1) currentSlide++;
+  if(endX > startX + threshold && currentSlide > 0) currentSlide--;
+  track.style.transition = "transform 0.3s ease-in-out";
+  track.style.transform = `translateX(-${currentSlide*slides[0].getBoundingClientRect().width}px)`;
+  dots.forEach((dot,i)=>dot.classList.toggle("active",i===currentSlide));
 });
+track.addEventListener('transitionend', ()=> { track.style.transition="none"; });
 </script>
 </body>
 </html>
