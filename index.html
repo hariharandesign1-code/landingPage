@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Align Planner</title>
 
-<!-- Adobe Fonts: Source Serif Pro + Garamond Premier Pro Display -->
+<!-- Adobe Fonts -->
 <link rel="stylesheet" href="https://use.typekit.net/odd4ksk.css">
 
 <style>
@@ -50,13 +50,10 @@ img { max-width: 100%; height: auto; display: block; }
   line-height: 1.1;
 }
 .intro-title {
-  font-family: "garamond-premier-pro-display", serif;
+  font-family: "garamond-premier-pro-light-display", serif;
   font-size: 3rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   line-height: 1.1;
-}
-@media (max-width: 480px) {
-  .intro-title { font-size: 2.2rem; line-height: 1.1; }
 }
 .intro-text {
   font-family: "source-serif-pro", serif;
@@ -75,16 +72,24 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* === PRODUCT CAROUSEL === */
-.carousel {
-  position: relative;
+.carousel-container {
   max-width: 700px; 
   margin: 0 auto 3rem;
+  overflow: hidden;
+  position: relative;
 }
-.carousel img { width: 100%; border-radius: 6px; }
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+.carousel img { border-radius: 6px; width: 100%; }
+
+/* === CAROUSEL DOTS === */
 .dots {
   display: flex;
   justify-content: center;
   margin-top: 0.5rem;
+  margin-bottom: 2rem; /* gap between dots and "Be the First to Know" */
 }
 .dot {
   width: 12px;
@@ -112,7 +117,7 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: 1.2rem;
   background: #fff;
   outline: none;
-  font-family: "source-serif-pro", serif;
+  font-family: "garamond-premier-pro-display", serif;
   text-align: center;
 }
 .signup input::placeholder { color: #8a7d70; }
@@ -125,7 +130,7 @@ img { max-width: 100%; height: auto; display: block; }
   border-radius: 30px;
   font-size: 1.2rem;
   cursor: pointer;
-  font-family: "source-serif-pro", serif;
+  font-family: "garamond-premier-pro-display", serif;
   transition: all 0.3s ease;
 }
 .signup button:active { background: #e8e3db; color: #5a4432; }
@@ -136,7 +141,7 @@ img { max-width: 100%; height: auto; display: block; }
   padding: 4rem 1rem 1rem 1rem;
 }
 .why-align h2 {
-  font-family: "garamond-premier-pro-display", serif;
+  font-family: "garamond-premier-pro-light-display", serif;
   font-size: 3rem;
   margin-bottom: 1rem;
   line-height: 1.1;
@@ -154,8 +159,8 @@ img { max-width: 100%; height: auto; display: block; }
 .features {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  max-width: 900px;
+  gap: 3rem;
+  max-width: 1000px;
   margin: 0 auto 4rem;
 }
 .feature {
@@ -166,25 +171,24 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .feature img {
   width: 100%;
-  max-width: 110px;
-  height: auto;
-  margin-bottom: 0.8rem;
+  max-width: 120px;
+  margin-bottom: 1rem;
 }
 .feature h3 {
-  font-family: "garamond-premier-pro-display", serif;
-  font-size: 1.2rem;
+  font-family: "garamond-premier-pro-light-display", serif;
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
   line-height: 1.1;
 }
 .feature p {
   font-family: "source-serif-pro", serif;
-  font-size: 1.08rem;
+  font-size: 1.2rem;
+  max-width: 220px;
   color: #6a6a6a;
-  max-width: 200px;
   line-height: 1.2;
 }
 
-/* === FOOTER SIGNUP SECTION === */
+/* === Footer Signup Section === */
 .footer-signup {
   max-width: 420px;
   margin: 2rem auto 6rem auto;
@@ -192,10 +196,9 @@ img { max-width: 100%; height: auto; display: block; }
   padding-top: 2rem;
 }
 .footer-signup .footer-text {
-  font-family: "garamond-premier-pro-display", serif;
+  font-family: "garamond-premier-pro-light-display", serif;
   font-size: 3rem;
   line-height: 1.1;
-  margin-top: 1rem;
   margin-bottom: 2rem;
 }
 .footer-signup input[type="email"] {
@@ -207,7 +210,7 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: 1.2rem;
   background: #fff;
   outline: none;
-  font-family: "source-serif-pro", serif;
+  font-family: "garamond-premier-pro-display", serif;
   text-align: center;
 }
 .footer-signup button {
@@ -219,12 +222,12 @@ img { max-width: 100%; height: auto; display: block; }
   border-radius: 30px;
   font-size: 1.2rem;
   cursor: pointer;
-  font-family: "source-serif-pro", serif;
+  font-family: "garamond-premier-pro-display", serif;
   transition: all 0.3s ease;
 }
 .footer-signup button:active { background: #e8e3db; color: #5a4432; }
 
-/* === FOOTER === */
+/* === Footer === */
 footer {
   text-align: center;
   padding: 2rem 1rem;
@@ -234,28 +237,38 @@ footer {
   margin-top: 3rem;
 }
 
-/* === RESPONSIVE === */
+/* === RESPONSIVE MOBILE === */
 @media (max-width: 768px) {
-  .intro-title { font-size: 3rem; line-height: 1.1; }
-  .intro-label, .intro-text { font-size: 2.25rem; line-height: 1.1; }
-  .why-align h2 { font-size: 3rem; line-height: 1.1; }
-  .why-align p { font-size: 1.25rem; line-height: 1.2; }
-  .footer-signup .footer-text { font-size: 3rem; line-height: 1.1; }
-  .features { grid-template-columns: 2fr 2fr; }
-  .feature img { max-width: 90px; }
-  .feature h3 { font-size: 1.44rem; }
-  .feature p { font-size: 1.08rem; }
-}
-@media (max-width: 480px) {
-  .intro-title { font-size: 2.2rem; line-height: 1.1; }
-  .intro-label, .intro-text { font-size: 2.25rem; line-height: 1.1; }
-  .why-align h2 { font-size: 2.2rem; line-height: 1.1; }
-  .why-align p { font-size: 1.26rem; line-height: 1.2; }
-  .footer-signup .footer-text { font-size: 2.2rem; line-height: 1.1; }
-  .features { grid-template-columns: 1fr; }
-  .feature img { max-width: 70px; }
-  .feature h3 { font-size: 1rem; }
-  .feature p { font-size: 0.9rem; }
+  .intro-title {
+    font-family: "garamond-premier-pro-light-display", serif;
+    font-size: 3rem;
+    margin-bottom: 2rem; /* increase gap with product images */
+  }
+  .carousel img { width: 110%; } /* 10% bigger */
+  .features {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+  .feature img { max-width: 140px; } /* 50% bigger icons */
+  .feature h3 {
+    font-family: "garamond-premier-pro-light-display", serif;
+    font-size: 1.8rem;
+  }
+  .feature p { font-size: 1.62rem; }
+  .why-align h2 {
+    font-family: "garamond-premier-pro-light-display", serif;
+    font-size: 4.5rem;
+  }
+  .why-align p { font-size: 1.875rem; }
+  .footer-signup .footer-text {
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+  .signup input[type="email"], .signup button,
+  .footer-signup input[type="email"], .footer-signup button {
+    font-family: "garamond-premier-pro-display", serif;
+  }
+  .footer-signup { max-width: 90%; margin: 2rem auto 6rem auto; }
 }
 </style>
 </head>
@@ -272,15 +285,21 @@ footer {
   <h1 class="intro-title">THE ALIGN PLANNER</h1>
 
   <!-- Carousel -->
-  <div class="carousel">
-    <img id="carousel-img" src="Align product.png" alt="Planner Image">
-    <div class="dots">
-      <span class="dot active" onclick="showSlide(0)"></span>
-      <span class="dot" onclick="showSlide(1)"></span>
-      <span class="dot" onclick="showSlide(2)"></span>
-      <span class="dot" onclick="showSlide(3)"></span>
-      <span class="dot" onclick="showSlide(4)"></span>
+  <div class="carousel-container">
+    <div class="carousel-track" id="carousel-track">
+      <img src="Align product.png" alt="Planner Image">
+      <img src="Align product_1.png" alt="Planner Image">
+      <img src="Align product_2.png" alt="Planner Image">
+      <img src="Align product_3.png" alt="Planner Image">
+      <img src="Align product_4.png" alt="Planner Image">
     </div>
+  </div>
+  <div class="dots">
+    <span class="dot active" onclick="showSlide(0)"></span>
+    <span class="dot" onclick="showSlide(1)"></span>
+    <span class="dot" onclick="showSlide(2)"></span>
+    <span class="dot" onclick="showSlide(3)"></span>
+    <span class="dot" onclick="showSlide(4)"></span>
   </div>
 
   <p class="intro-text">Be the First to Know</p>
@@ -339,22 +358,26 @@ footer {
 
 <script>
 /* Carousel Script */
-const images = [
-  "Align product.png",
-  "Align product_1.png",
-  "Align product_2.png",
-  "Align product_3.png",
-  "Align product_4.png"
-];
+const track = document.getElementById('carousel-track');
+const slides = Array.from(track.children);
+const dots = document.querySelectorAll('.dot');
 let currentSlide = 0;
-const imgElement = document.getElementById("carousel-img");
-const dots = document.querySelectorAll(".dot");
-function showSlide(index){
-  currentSlide=index;
-  imgElement.src=images[index];
-  dots.forEach((dot,i)=>dot.classList.toggle("active",i===index));
-}
-</script>
 
+function showSlide(index) {
+  const slideWidth = slides[0].getBoundingClientRect().width;
+  track.style.transform = `translateX(-${slideWidth * index}px)`;
+  dots.forEach((dot,i)=>dot.classList.toggle("active",i===index));
+  currentSlide=index;
+}
+
+// Swipe for mobile
+let startX = 0;
+track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
+track.addEventListener('touchend', e => {
+  const endX = e.changedTouches[0].clientX;
+  if(endX < startX - 50 && currentSlide < slides.length-1) showSlide(currentSlide+1);
+  if(endX > startX + 50 && currentSlide > 0) showSlide(currentSlide-1);
+});
+</script>
 </body>
 </html>
