@@ -171,10 +171,11 @@
       top: 50%;
       transform: translateY(-50%);
       z-index: 100;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: transparent;
       border-radius: 50%;
       padding: 10px;
       cursor: pointer;
+      filter: none;
     }
     .left-arrow {
       left: 10px;
@@ -182,11 +183,27 @@
     .right-arrow {
       right: 10px;
     }
+
+    /* Adjust arrow icon size based on screen width */
     .carousel-arrow img {
-      width: 30px;
-      height: 30px;
+      width: 5vw; /* 5% of the viewport width */
+      height: auto; /* Maintain aspect ratio */
       opacity: 1;
       filter: none;
+    }
+
+    /* Media Query for Larger Screens */
+    @media (min-width: 768px) {
+      .carousel-arrow img {
+        width: 3vw; /* Adjust size for tablet and larger screens */
+      }
+    }
+
+    /* Media Query for Very Large Screens (Desktop) */
+    @media (min-width: 1200px) {
+      .carousel-arrow img {
+        width: 2.5vw; /* Further reduce for large desktop screens */
+      }
     }
 
     /* === WHY ALIGN === */
@@ -365,9 +382,9 @@
     Sign up below to join our community and be the first to get notified when preorders open.
   </p>
 
-  <!-- Mailchimp Custom Signup Form -->
+  <!-- Mailchimp Custom Signup Form (Top) -->
   <div class="email-form">
-    <form action="https://mynextverse.us5.list-manage.com/subscribe/post?u=199ddc4283a70c38f9fa26b1b&id=4037d9bc2b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+    <form action="https://mynextverse.us17.list-manage.com/subscribe/post?u=00170cead0249dcc99d36ac87&amp;id=f83ec22dfe&amp;f_id=0009e3e3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
       <input type="text" name="FNAME" class="required text" id="mce-FNAME" placeholder="FULL NAME" required="">
       <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="EMAIL ADDRESS" required>
       <button type="submit">JOIN THE WAITLIST</button>
@@ -403,7 +420,7 @@
   </div>
 </section>
 
-<!-- Footer Signup -->
+<!-- Footer Signup (Footer Section) -->
 <section class="footer-signup">
   <p class="footer-text">DON’T JUST PLAN YOUR LIFE.<br>ALIGN IT.</p>
   <form action="https://mynextverse.us5.list-manage.com/subscribe/post?u=199ddc4283a70c38f9fa26b1b&id=4037d9bc2b" method="post" target="_blank">
