@@ -1,297 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Align Planner</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Align Planner</title>
 
-<!-- Adobe Fonts -->
-<link rel="stylesheet" href="https://use.typekit.net/odd4ksk.css">
+  <!-- Adobe Fonts -->
+  <link rel="stylesheet" href="https://use.typekit.net/odd4ksk.css">
+  <!-- Favicon -->
+  <link rel="icon" href="Align_favicon.png" type="image/png">
 
-<style>
-/* === RESET === */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  background-color: #f6f4ef;
-  color: #5a4432;
-  line-height: 1.2;
-  font-family: "source-serif-pro", serif;
-  -webkit-font-smoothing: antialiased; /* Smooth font rendering */
-  -moz-osx-font-smoothing: grayscale; /* For better font rendering on Mac */
-}
-img { max-width: 100%; height: auto; display: block; }
+  <style>
+    /* === RESET === */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: #f6f4ef;
+      color: #5a4432;
+      line-height: 1.2;
+      font-family: "source-serif-pro", serif;
+      -webkit-font-smoothing: antialiased; /* Smooth font rendering */
+      -moz-osx-font-smoothing: grayscale; /* For better font rendering on Mac */
+    }
+    img { max-width: 100%; height: auto; display: block; }
 
-/* === TOP NAV === */
-.top-nav {
-  width: 100%;
-  height: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #f6f4ef;
-  position: fixed;
-  top: 0; left: 0;
-  z-index: 1000;
-  border-bottom: 1px solid #e8e3db;
-}
-.nav-logo { max-height: 45px; }
+    /* === TOP NAV === */
+    .top-nav {
+      width: 100%;
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f6f4ef;
+      position: fixed;
+      top: 0; left: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #e8e3db;
+    }
+    .nav-logo { max-height: 45px; }
 
-/* === HERO === */
-.hero {
-  padding-top: 120px;
-  text-align: center;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-.intro-label {
-  font-family: "source-serif-pro", serif;
-  font-style: italic;
-  font-size: 2rem;
-  margin-bottom: 0.2rem;
-  color: #5a4432;
-  line-height: 1.1;
-}
-.intro-title {
-  font-family: "garamond-premier-pro-light-display", serif;
-  font-size: 2.8rem;
-  line-height: 1.1;
-  font-weight: 300;
-  margin-bottom: 1rem;
-  -webkit-font-smoothing: antialiased;
-  text-transform: uppercase;
-}
-.intro-text {
-  font-family: "source-serif-pro", serif;
-  font-style: italic;
-  color: #5a4432;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  line-height: 1.1;
-}
-.signup-note {
-  font-family: "source-serif-pro", serif;
-  color: #5a4432;
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  line-height: 1.2;
-}
+    /* === HERO === */
+    .hero {
+      padding-top: 120px;
+      text-align: center;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    .intro-label {
+      font-family: "source-serif-pro", serif;
+      font-style: italic;
+      font-size: 2rem;
+      margin-bottom: 0.2rem;
+      color: #5a4432;
+      line-height: 1.1;
+    }
+    .intro-title {
+      font-family: "garamond-premier-pro-light-display", serif;
+      font-size: 2.8rem;
+      line-height: 1.1;
+      font-weight: 300;
+      margin-bottom: 1rem;
+      -webkit-font-smoothing: antialiased;
+      text-transform: uppercase;
+    }
+    .intro-text {
+      font-family: "source-serif-pro", serif;
+      font-style: italic;
+      color: #5a4432;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+    .signup-note {
+      font-family: "source-serif-pro", serif;
+      color: #5a4432;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      line-height: 1.2;
+    }
 
-/* === CUSTOM EMAIL FORM DESIGN === */
-.email-form {
-  max-width: 420px;
-  margin: 2rem auto;
-  text-align: center;
-  background-color: transparent; /* No background */
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: none; /* Remove shadow */
-}
+    /* === CUSTOM EMAIL FORM DESIGN === */
+    .email-form {
+      max-width: 420px;
+      margin: 2rem auto;
+      text-align: center;
+      background-color: transparent; /* No background */
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: none; /* Remove shadow */
+    }
 
-.email-form h3 {
-  font-family: "garamond-premier-pro-light-display", serif;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #5a4432;
-  text-transform: uppercase;
-}
+    .email-form h3 {
+      font-family: "garamond-premier-pro-light-display", serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #5a4432;
+      text-transform: uppercase;
+    }
 
-.email-form input[type="email"] {
-  width: 100%;
-  padding: 0.85rem 1rem;
-  border: 1px solid #c4c0b8;
-  border-radius: 30px;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-  background: transparent; /* Transparent background */
-  outline: none;
-  font-family: "garamond-premier-pro-display", serif;
-  text-align: center;
-  color: #5a4432; /* Text color */
-}
+    .email-form input[type="text"],
+    .email-form input[type="email"] {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1px solid #c4c0b8;
+      border-radius: 30px;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      background: transparent; /* Transparent background */
+      outline: none;
+      font-family: "garamond-premier-pro-display", serif;
+      text-align: center;
+      color: #5a4432; /* Text color */
+    }
 
-.email-form input::placeholder { 
-  color: #8a7d70; /* Placeholder color */
-}
+    .email-form input::placeholder { 
+      color: #8a7d70; /* Placeholder color */
+    }
 
-.email-form button {
-  width: 100%;
-  padding: 0.95rem;
-  background: #5a4432;
-  color: #fff;
-  border: none;
-  border-radius: 30px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  font-family: "garamond-premier-pro-display", serif;
-  transition: all 0.3s ease;
-}
+    .email-form button {
+      width: 100%;
+      padding: 0.95rem;
+      background: #5a4432;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      font-family: "garamond-premier-pro-display", serif;
+      transition: all 0.3s ease;
+    }
 
-.email-form button:active {
-  background: #e8e3db;
-  color: #5a4432;
-}
+    .email-form button:active {
+      background: #e8e3db;
+      color: #5a4432;
+    }
 
-/* === PRODUCT CAROUSEL === */
-.carousel-container {
-  max-width: 700px; 
-  margin: 0 auto 2rem;
-  overflow: hidden;
-  position: relative;
-}
-.carousel-track {
-  display: flex;
-  transition: transform 0.4s ease;
-}
-.carousel img { border-radius: 6px; width: 100%; }
+    /* === PRODUCT CAROUSEL === */
+    .carousel-container {
+      max-width: 700px; 
+      margin: 0 auto 2rem;
+      overflow: hidden;
+      position: relative;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.4s ease;
+    }
+    .carousel img { border-radius: 6px; width: 100%; }
 
-/* === CAROUSEL DOTS === */
-.dots {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem; 
-  margin-bottom: 2rem; 
-}
-.dot {
-  width: 12px;
-  height: 12px;
-  margin: 0 6px;
-  background: #c4c0b8;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-.dot.active { background: #5a4432; }
+    /* === CAROUSEL DOTS === */
+    .dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem; 
+      margin-bottom: 2rem; 
+    }
+    .dot {
+      width: 12px;
+      height: 12px;
+      margin: 0 6px;
+      background: #c4c0b8;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .dot.active { background: #5a4432; }
 
-/* === WHY ALIGN === */
-.why-align {
-  text-align: center;
-  padding: 3rem 1rem 2rem 1rem;
-  margin-top: 6rem;
-}
-.why-align h2 {
-  font-family: "garamond-premier-pro-light-display", serif;
-  font-size: 2.8rem;
-  line-height: 1.1;
-  font-weight: 300;
-  margin-bottom: 1rem;
-}
-.why-align p {
-  font-family: "source-serif-pro", serif;
-  font-size: 1.2rem;
-  color: #5a4432;
-  line-height: 1.2;
-  max-width: 640px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 3rem;
-}
+    /* === ARROW ICONS === */
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 100;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .left-arrow {
+      left: 10px;
+    }
+    .right-arrow {
+      right: 10px;
+    }
+    .carousel-arrow img {
+      width: 30px;
+      height: 30px;
+      opacity: 1;
+      filter: none;
+    }
 
-/* === FEATURE ICONS === */
-.features {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto 3rem;
-}
-.feature {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.feature img {
-  width: 100%;
-  max-width: 100px;
-  margin-bottom: 0.8rem;
-}
-.feature h3 {
-  font-family: "garamond-premier-pro-light-display", serif;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  line-height: 1.1;
-}
-.feature p {
-  font-family: "source-serif-pro", serif;
-  font-size: 1.1rem;
-  max-width: 220px;
-  color: #6a6a6a;
-  line-height: 1.2;
-}
+    /* === WHY ALIGN === */
+    .why-align {
+      text-align: center;
+      padding: 3rem 1rem 2rem 1rem;
+      margin-top: 6rem;
+    }
+    .why-align h2 {
+      font-family: "garamond-premier-pro-light-display", serif;
+      font-size: 2.8rem;
+      line-height: 1.1;
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    .why-align p {
+      font-family: "source-serif-pro", serif;
+      font-size: 1.2rem;
+      color: #5a4432;
+      line-height: 1.2;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 3rem;
+    }
 
-/* === Responsive for Mobile === */
-@media (max-width: 768px) {
-  /* Adjust grid for smaller screens */
-  .features {
-    grid-template-columns: repeat(2, 1fr); /* Change to 2 columns on mobile */
-  }
+    /* === FEATURE ICONS === */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto 3rem;
+    }
+    .feature {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .feature img {
+      width: 100%;
+      max-width: 100px;
+      margin-bottom: 0.8rem;
+    }
+    .feature h3 {
+      font-family: "garamond-premier-pro-light-display", serif;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.1;
+    }
+    .feature p {
+      font-family: "source-serif-pro", serif;
+      font-size: 1.1rem;
+      max-width: 220px;
+      color: #6a6a6a;
+      line-height: 1.2;
+    }
 
-  .feature img {
-    max-width: 80px; /* Smaller icon size on mobile */
-  }
+    /* === Responsive for Mobile === */
+    @media (max-width: 768px) {
+      /* Adjust grid for smaller screens */
+      .features {
+        grid-template-columns: repeat(2, 1fr); /* Change to 2 columns on mobile */
+      }
 
-  .feature h3 {
-    font-size: 1.2rem; /* Adjust heading size */
-  }
+      .feature img {
+        max-width: 80px; /* Smaller icon size on mobile */
+      }
 
-  .feature p {
-    font-size: 1rem; /* Adjust text size */
-  }
-}
+      .feature h3 {
+        font-size: 1.2rem; /* Adjust heading size */
+      }
 
-/* === Footer Signup Section === */
-.footer-signup {
-  max-width: 420px;
-  margin: 2rem auto 6rem auto;
-  text-align: center;
-  padding-top: 1.5rem;
-}
-.footer-signup .footer-text {
-  font-family: "garamond-premier-pro-light-display", serif;
-  font-size: 2.8rem;
-  line-height: 1.1;
-  margin-bottom: 2rem;
-  font-weight: 300;
-  -webkit-font-smoothing: antialiased;
-  text-transform: uppercase;
-}
-.footer-signup input[type="email"] {
-  width: 100%;
-  padding: 0.85rem 1rem;
-  border: 1px solid #c4c0b8;
-  border-radius: 30px;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-  background: transparent;
-  outline: none;
-  font-family: "garamond-premier-pro-display", serif;
-  text-align: center;
-}
-.footer-signup button {
-  width: 100%;
-  padding: 0.95rem;
-  background: #5a4432;
-  color: #fff;
-  border: none;
-  border-radius: 30px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  font-family: "garamond-premier-pro-display", serif;
-  transition: all 0.3s ease;
-}
-.footer-signup button:active { background: #e8e3db; color: #5a4432; }
+      .feature p {
+        font-size: 1rem; /* Adjust text size */
+      }
+    }
 
-/* === Footer === */
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.96rem;
-  color: #666;
-  border-top: 1px solid #ddd;
-  margin-top: 3rem;
-}
+    /* === Footer Signup Section === */
+    .footer-signup {
+      max-width: 420px;
+      margin: 2rem auto 6rem auto;
+      text-align: center;
+      padding-top: 1.5rem;
+    }
+    .footer-signup .footer-text {
+      font-family: "garamond-premier-pro-light-display", serif;
+      font-size: 2.8rem;
+      line-height: 1.1;
+      margin-bottom: 2rem;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+      text-transform: uppercase;
+    }
+    .footer-signup input[type="text"],
+    .footer-signup input[type="email"] {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1px solid #c4c0b8;
+      border-radius: 30px;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      background: transparent;
+      outline: none;
+      font-family: "garamond-premier-pro-display", serif;
+      text-align: center;
+    }
+    .footer-signup button {
+      width: 100%;
+      padding: 0.95rem;
+      background: #5a4432;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      font-family: "garamond-premier-pro-display", serif;
+      transition: all 0.3s ease;
+    }
+    .footer-signup button:active { background: #e8e3db; color: #5a4432; }
 
-</style>
+    /* === Footer === */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.96rem;
+      color: #666;
+      border-top: 1px solid #ddd;
+      margin-top: 3rem;
+    }
+
+  </style>
 </head>
 <body>
 
@@ -314,7 +342,16 @@ footer {
       <img src="Align product_3.png" alt="Planner Image">
       <img src="Align product_4.png" alt="Planner Image">
     </div>
+
+    <!-- Navigation Arrows -->
+    <div class="carousel-arrow left-arrow" onclick="moveSlide(-1)">
+      <img src="Align Left Icon.png" alt="Left Arrow">
+    </div>
+    <div class="carousel-arrow right-arrow" onclick="moveSlide(1)">
+      <img src="Align Right Icon.png" alt="Right Arrow">
+    </div>
   </div>
+
   <div class="dots">
     <span class="dot active" onclick="showSlide(0)"></span>
     <span class="dot" onclick="showSlide(1)"></span>
@@ -331,7 +368,8 @@ footer {
   <!-- Custom Signup Form -->
   <div class="email-form">
     <form action="https://mynextverse.us5.list-manage.com/subscribe/post?u=199ddc4283a70c38f9fa26b1b&id=4037d9bc2b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-      <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="YOUR EMAIL ID" required>
+      <input type="text" name="FNAME" class="required text" id="mce-FNAME" placeholder="FULL NAME" required="">
+      <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="EMAIL ID" required>
       <button type="submit">JOIN THE WAITLIST</button>
     </form>
   </div>
@@ -369,13 +407,14 @@ footer {
 <section class="footer-signup">
   <p class="footer-text">DON’T JUST PLAN YOUR LIFE.<br>ALIGN IT.</p>
   <form action="https://mynextverse.us5.list-manage.com/subscribe/post?u=199ddc4283a70c38f9fa26b1b&id=4037d9bc2b" method="post" target="_blank">
-    <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="YOUR EMAIL ID" required>
+    <input type="text" name="FNAME" class="required text" id="mce-FNAME" placeholder="FULL NAME" required>
+    <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="EMAIL ID" required>
     <button type="submit">JOIN THE WAITLIST</button>
   </form>
 </section>
 
 <!-- Footer -->
-<footer>© 2025 My Store, Powered by mynextverse.com | Privacy Policy</footer>
+<footer> Copyright © 2025 My Next Verse Inc. All rights reserved</footer>
 
 <script>
 // Carousel Script
@@ -391,14 +430,22 @@ function showSlide(index) {
   currentSlide=index;
 }
 
+function moveSlide(direction) {
+  currentSlide += direction;
+  if (currentSlide < 0) currentSlide = slides.length - 1;
+  if (currentSlide >= slides.length) currentSlide = 0;
+  showSlide(currentSlide);
+}
+
 // Swipe for mobile
 let startX = 0;
 track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
 track.addEventListener('touchend', e => {
   const endX = e.changedTouches[0].clientX;
-  if(endX < startX - 50 && currentSlide < slides.length-1) showSlide(currentSlide+1);
-  if(endX > startX + 50 && currentSlide > 0) showSlide(currentSlide-1);
+  if(endX < startX - 50 && currentSlide < slides.length-1) moveSlide(1);
+  if(endX > startX + 50 && currentSlide > 0) moveSlide(-1);
 });
 </script>
+
 </body>
 </html>
