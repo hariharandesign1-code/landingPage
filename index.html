@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <title>Align Planner</title>
 
   <!-- Adobe Fonts -->
@@ -146,6 +147,7 @@
       transition: transform 0.4s ease;
     }
     .carousel img {
+        flex-shrink: 0; /* Prevent shrinking */
         border-radius: 6px;
         width: 100%; /* This still lets the images take up the full width of their container */
         height: auto; /* Ensures the height adjusts based on the width to maintain aspect ratio */
