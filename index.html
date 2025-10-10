@@ -140,11 +140,14 @@
       max-width: 700px; 
       margin: 0 auto 2rem;
       overflow: hidden;
+      touch-action: none; /* Disable default swipe handling */
       position: relative;
+      transition: transform 0.4s ease; /* Smooth transition */
     }
     .carousel-track {
       display: flex;
       transition: transform 0.4s ease;
+      width: 100%; /* Ensures the carousel images are aligned properly */
     }
     .carousel img {
       flex-shrink: 0; /* Prevent shrinking */
@@ -386,7 +389,7 @@
 
   <p class="intro-text">Be the First to Know</p>
   <p class="signup-note">
-    Sign up below to join our community and be the first to get notified when preorders open.
+    Sign up below to join our community <br> and be the first to get notified when preorders open.
   </p>
 
   <!-- Mailchimp Custom Signup Form (Top) -->
@@ -402,7 +405,7 @@
 <!-- Why Align -->
 <section class="why-align">
   <h2>WHY ALIGN?</h2>
-  <p>This planner is dedicated to you. The dreamer, the doer, and the one brave enough to chase growth, build habits, and shape your life with purpose, one day, one week, and one month at a time.</p>
+  <p>This planner is dedicated to you. <br> The dreamer, the doer, and the one brave enough to chase growth, build habits, and shape your life with purpose, one day, one week, and one month at a time.</p>
   <div class="features">
     <div class="feature">
       <img src="Align_Daily Reset Icon.png" alt="Daily Reset">
